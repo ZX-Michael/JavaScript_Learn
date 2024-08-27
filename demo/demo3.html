@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <dialog open>
+    练习用网页
+  </dialog>
+
+  <form action="https://example.com/api" method="post">
+    <label for="POST-name"><a href="www.baidu.com">用户名</a></label>
+    <input id="POST-name" type="text" name="user">
+    <input type="submit" value="提交">
+
+    <fieldset>
+      <legend>组件标集题</legend>
+      <p>名字（4~8个字的英文字符）：<input type="text" name="age" pattern="[a-z]{4,8}"></p>
+      <p>性别：<input type="text" name="gender"></p>
+
+      <p>搜索框<br>
+        <input type="search" id="mySearch" name="q" placeholder="输入搜索词……" required>
+        <input type="submit" value="搜索" id="Search_input">
+      </p>
+
+      <p>音量调节<input type="range" id="start" name="volume" min="0" max="100"></p>
+
+      <p>喜欢的宠物调研<br>
+        <label for="pet-select">宠物：</label>
+        <select id="pet-select" name="pet-select">
+          <option value="">--请选择你喜欢的宠物--</option>
+          <optgroup label="四条腿的宠物">
+            <option value="dog">狗</option>
+            <option value="cat">猫</option>
+          </optgroup>
+          <optgroup label="鸟类">
+            <option value="parrot">鹦鹉</option>
+            <option value="thrush">画眉</option>
+          </optgroup>
+        </select>
+      </p>
+
+      <p>冰激凌口味选择<br>
+        <label for="ice-cream-choice">冰淇淋：</label>
+        <input type="text" list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice">
+
+        <datalist id="ice-cream-flavors">
+          <option value="巧克力" label="脆皮的">
+          <option value="椰子">
+          <option value="薄荷">
+          <option value="草莓">
+          <option value="香草">
+        </datalist>
+      </p>
+
+      <p>烤箱的当前温度是<meter min="200" max="500" value="350"> 350 度</meter></p>
+
+    </fieldset>
+
+
+    <fieldset>
+      <legend>故事集</legend>
+      <textarea id="story" name="story" rows="5" cols="33">这是一个很长的故事。
+      </textarea>
+
+    </fieldset>
+  </form>
+</body>
+
+</html>

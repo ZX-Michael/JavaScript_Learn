@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Personal Homepage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #E7ECEF;
+      color: #274C77;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #274C77;
+      color: #E7ECEF;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #274C77;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #E7ECEF;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 5px 15px;
+      display: inline-block;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #A3CEF1;
+    }
+
+    nav a.selected {
+      color: #274C77;
+      background-color: #E7ECEF;
+      border-radius: 5px;
+      padding: 10px 15px;
+      box-shadow: -5px 5px 0 0 #E7ECEF;
+      transform: translateY(-2px);
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section {
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    h1 {
+      color: #6096BA;
+    }
+
+    .button {
+      background-color: #6096BA;
+      color: #E7ECEF;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    .button:hover {
+      background-color: #A3CEF1;
+    }
+
+    .important {
+      color: #002500;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Welcome to My Personal Homepage</h1>
+  </header>
+
+  <nav>
+    <a onclick="showSection('about')" id="nav-about">About Me</a>
+    <a onclick="showSection('portfolio')" id="nav-portfolio">Portfolio</a>
+    <a onclick="showSection('library')" id="nav-library">Library</a>
+    <a onclick="showSection('contact')" id="nav-contact">Contact</a>
+  </nav>
+
+  <div class="container">
+    <section id="about" class="active">
+      <h1>About Me</h1>
+      <p>Hello! I'm Adonis, a passionate developer and tech enthusiast. I love to work on creative projects and
+        explore new technologies.</p>
+    </section>
+
+    <section id="portfolio">
+      <h1>Portfolio</h1>
+      <p>Here are some of the projects I've worked on. Check them out!</p>
+      <a href="#" class="button">View Projects</a>
+    </section>
+
+    <section id="library">
+      <h1>Library</h1>
+      <p>Welcome to my library where you can find and read my favorite books online.</p>
+      <a href="#" class="button important">Go to Library</a>
+    </section>
+
+    <section id="contact">
+      <h1>Contact</h1>
+      <p>Feel free to reach out if you'd like to collaborate or just say hello!</p>
+      <a href="#" class="button">Get in Touch</a>
+    </section>
+  </div>
+
+  <script>
+    function showSection(sectionId) {
+      // Hide all sections
+      document.querySelectorAll('section').forEach(section => {
+        section.classList.remove('active');
+      });
+      // Show the selected section
+      document.getElementById(sectionId).classList.add('active');
+
+      // Remove 'selected' class from all nav links
+      document.querySelectorAll('nav a').forEach(link => {
+        link.classList.remove('selected');
+      });
+
+      // Add 'selected' class to the active nav link
+      document.getElementById('nav-' + sectionId).classList.add('selected');
+    }
+
+    // Initialize the first section as selected
+    document.getElementById('nav-about').classList.add('selected');
+  </script>
+</body>
+
+</html>
